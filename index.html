@@ -3,10 +3,85 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Sumin's Portfolio Website</title>
+   <title>Welcome to Sumin's Portfolio Website</title>
+   <link href="css/reset.css" rel="stylesheet">
+   <link href="css/grid.css" rel="stylesheet">
+   <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-   
+   <h1 class="hidden">Home page</h1>
+   <header class="grid-con" id="main-header">
+      <h2 class="hidden">Top Main Navigation</h2>
+      <div class="main-logo" id="top-logo">
+         <a href="index.html">
+            <!-- <img src="images/SUMIN-LOGO.svg" alt="main-logo"> -->
+         </a>
+      </div>
+
+      <button id="button" class="col-start-4 col-end-5 m-col-start-12 m-col-end-13"></button>
+      <nav class="navbar col-start-4 col-end-5 m-col-start-12 m-col-end-13 l-col-start-6 l-col-end-13" id="burger-con">
+         <ul class="navigation">
+            <li class="menu"><a href="index.html"></a></li>
+            <li class="menu"><a href="aboutPage.html"></a></li>
+            <li class="menu"><a href="projectPage.html"></a></li>
+            <li class="menu"><a href="#"></a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <section id="main-hero">
+      <h2 class="hidden">Main Hero Section</h2>
+      <div id="hero-logo" class="col-start-1 col-end-5"></div>
+      <div class="hero-t" id="hero-t-1"></div>
+      <div class="hero-t" id="hero-t-2"></div>
+   </section>
+
+   <div id="rotation-t"></div>
+
+   <section id="desc-me">
+      <h2 class="hidden">Little Description of Me</h2>
+      <div class="desc-t" id="dec-title"></div>
+      <div class="desc-t" id="desc-p">
+      </div>
+      <div id="my-photo"></div>
+      <div class="contact-button"></div>
+   </section>
+
+   <section id="demo-reel">
+      <h2 class="hidden">Demo Reel section</h2>
+
+   </section>
+
+   <section id="projects">
+      <div class="project" id="project1">
+         <div class="pj-title"></div>
+         <dev class="pj-type"></dev>
+      </div>
+      <div class="project" id="project2">
+         <div class="pj-title"></div>
+         <dev class="pj-type"></dev>
+      </div>
+      <div class="project" id="project3">
+         <div class="pj-title"></div>
+         <dev class="pj-type"></dev>
+      </div>
+      <div class="project" id="project4">
+         <div class="pj-title"></div>
+         <dev class="pj-type"></dev>
+      </div>
+
+      <div class="button" id="more-btn"></div>
+   </section>
+
+   <footer id="main-footer">
+      <h2 class="hidden">Main footer section</h2>
+
+      <div class="socialMediaIcon" id="gitHub"></div>
+      <div class="socialMediaIcon" id="linkin"></div>
+      <div class="socialMediaIcon" id="instagram"></div>
+   </footer>
+
+
    <script src="js/main.js"></script>
 </body>
 </html>
