@@ -10,16 +10,17 @@
 </head>
 <body>
    <h1 class="hidden">Home page</h1>
-   <header class="grid-con" id="main-header">
+   <div id="sticky-nav-con">
+      <header class="grid-con" id="main-header">
       <h2 class="hidden">Top Main Navigation</h2>
-      <div class="main-logo" id="top-logo">
+      <div class="main-logo l-col-start-1 l-col-end-3" id="top-logo">
          <a href="index.html">
             <!-- <img src="images/SUMIN-LOGO.svg" alt="main-logo"> -->
          </a>
       </div>
 
-      <button id="button" class="col-start-4 col-end-5 m-col-start-12 m-col-end-13"></button>
-      <nav class="navbar col-start-4 col-end-5 m-col-start-12 m-col-end-13 l-col-start-6 l-col-end-13" id="burger-con">
+      <button id="button" class="col-start-4 col-end-5 m-col-start-8 m-col-end-9"></button>
+      <nav class="navbar col-start-4 col-end-5 m-col-start-8 m-col-end-9 l-col-start-7 l-col-end-13 xl-col-start-7 xl-col-start-13" id="burger-con">
          <ul class="navigation">
             <li class="menu"><a href="index.html"></a></li>
             <li class="menu"><a href="aboutPage.html"></a></li>
@@ -28,46 +29,72 @@
          </ul>
       </nav>
    </header>
+   </div>
 
-   <section id="main-hero">
+   <section id="main-hero" class="grid-con">
       <h2 class="hidden">Main Hero Section</h2>
-      <div id="hero-logo" class="col-start-1 col-end-5"></div>
-      <div class="hero-t" id="hero-t-1"></div>
-      <div class="hero-t" id="hero-t-2"></div>
-   </section>
-
-   <div id="rotation-t"></div>
-
-   <section id="desc-me">
-      <h2 class="hidden">Little Description of Me</h2>
-      <div class="desc-t" id="dec-title"></div>
-      <div class="desc-t" id="desc-p">
+      <div id="hero-logo" class="col-start-1 col-end-5 m-col-span-full l-col-start-1 l-col-end-8 xl-col-start-1 xl-col-end-8">
       </div>
-      <div id="my-photo"></div>
-      <div class="contact-button"></div>
+
+      <div class="hero-t col-start-1 col-end-3 m-col-start-1 m-col-end-6 l-col-start-9 l-col-end-13 xl-col-start-9 xl-col-end-13" id="hero-t-1">
+
+      </div>
+      <div class="hero-t col-start-2 col-end-4 m-col-start-5 m-col-end-9 l-col-start-8 l-col-end-12 xl-col-start-8 xl-col-end-12" id="hero-t-2">
+
+      </div>
    </section>
 
-   <section id="demo-reel">
+
+   <div id="rotation-t" class="full-width-grid-con">
+      <h2 class="hidden">Loop text</h2>
+   </div>
+
+
+
+   <section id="desc-me" class="grid-con">
+      <h2 class="hidden">Little Description of Me</h2>
+      <div class="col-start-2 col-end-4 m-col-span-full l-col-start-6 l-col-end-8 xl-col-start-6 xl-col-end-8" id="dec-title"></div>
+      <div class="desc-t col-span-full m-col-span-full l-col-start-3 l-col-end-11 xl-col-start-2 xl-col-end-12" id="desc-p">
+      </div>
+      <div id="my-photo" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12 xl-col-start-3 xl-col-end-11">
+         <div class="photo" id="pt-1"></div>
+         <div class="photo" id="pt-2"></div>
+      </div>
+      <div class="contact-button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9"></div>
+   </section>
+
+   <section id="demo-reel" class=" full-width-grid-con">
       <h2 class="hidden">Demo Reel section</h2>
 
    </section>
 
-   <section id="projects">
-      <div class="project" id="project1">
-         <div class="pj-title"></div>
-         <dev class="pj-type"></dev>
+   <section id="projects" class="grid-con">
+      <h2 class="hidden">Project Showcase</h2>
+      <div id="showcase-title" class="col-span-full m-col-span-2 l-col-span-2 xl-col-span-2">
       </div>
-      <div class="project" id="project2">
-         <div class="pj-title"></div>
-         <dev class="pj-type"></dev>
-      </div>
-      <div class="project" id="project3">
-         <div class="pj-title"></div>
-         <dev class="pj-type"></dev>
-      </div>
-      <div class="project" id="project4">
-         <div class="pj-title"></div>
-         <dev class="pj-type"></dev>
+      
+      <div class="showcase col-span-full">
+
+         <div class="project" id="project1">
+            <div class="pj-title"></div>
+            <dev class="pj-type"></dev>
+         </div>
+
+         <div class="project " id="project2">
+            <div class="pj-title col-span-2"></div>
+            <dev class="pj-type col-span-2"></dev>
+         </div>
+
+         <div class="project" id="project3">
+            <div class="pj-title col-span-2"></div>
+            <dev class="pj-type col-span-2"></dev>
+         </div>
+
+         <div class="project" id="project4">
+            <div class="pj-title col-span-2"></div>
+            <dev class="pj-type col-span-2"></dev>
+         </div>
+
       </div>
 
       <div class="button" id="more-btn"></div>
