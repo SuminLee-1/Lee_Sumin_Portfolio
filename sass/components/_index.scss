@@ -1,5 +1,6 @@
 // Import variables from the main variables partial
 @import"./header.scss";
+@import"./footer.scss";
 
 #main-hero  {
    margin-top: 5.625rem;
@@ -197,24 +198,36 @@
       background-color: $gray1;
       width: 6.0625rem;
       height: 1.1875rem;
+      margin-bottom: 30px;
    }
 
-   .showcase {
    .project {
       height: 22.875rem;
+      width: 375px;
       background-color: $gray2;
+      margin-top: 10px;
 
       #project2 {
          background-color: $gray3;}
       #project3 {background-color: $gray4;}
       #project4 {background-color: $gray2;}
 
-      .pj-title {
-         width: 6.0625rem;
-         height: 1.1875rem;
-         margin-top: 2.75rem;
-         background-color: white;
+      @include tablet {
+         height: 366px;
+
       }
+
+      @include desktop {
+         height: 490px;
+         width: 502px;
       }
-   }
+
+      // .pj-title {
+      //    width: 6.0625rem;
+      //    height: 1.1875rem;
+      //    margin-top: 2.75rem;
+      //    background-color: white;
+      // }
+      }
+
 }

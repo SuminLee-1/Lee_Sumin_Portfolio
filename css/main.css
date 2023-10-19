@@ -89,6 +89,13 @@
   }
 }
 
+#main-footer {
+  background-color: #212121;
+  height: 173px;
+  margin-top: 100px;
+  justify-self: center;
+}
+
 #main-hero {
   margin-top: 5.625rem;
 }
@@ -267,23 +274,31 @@
   background-color: #212121;
   width: 6.0625rem;
   height: 1.1875rem;
+  margin-bottom: 30px;
 }
-#projects .showcase .project {
+#projects .project {
   height: 22.875rem;
+  width: 375px;
   background-color: #464646;
+  margin-top: 10px;
 }
-#projects .showcase .project #project2 {
+#projects .project #project2 {
   background-color: #7b7b7b;
 }
-#projects .showcase .project #project3 {
+#projects .project #project3 {
   background-color: #acacac;
 }
-#projects .showcase .project #project4 {
+#projects .project #project4 {
   background-color: #464646;
 }
-#projects .showcase .project .pj-title {
-  width: 6.0625rem;
-  height: 1.1875rem;
-  margin-top: 2.75rem;
-  background-color: white;
+@media (min-width: 744px) {
+  #projects .project {
+    height: 366px;
+  }
+}
+@media (min-width: 1200px) {
+  #projects .project {
+    height: 490px;
+    width: 502px;
+  }
 }/*# sourceMappingURL=main.css.map */
