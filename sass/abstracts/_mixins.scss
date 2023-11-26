@@ -1,7 +1,5 @@
 //flex box mixins
 
-@use 'variables';
-
 @mixin flex-column {
       display: flex;
       flex-direction: column;

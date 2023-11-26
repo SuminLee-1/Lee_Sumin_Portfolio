@@ -1,18 +1,13 @@
 console.log("Js is fired!");
 
 (function(){
-	let button = document.querySelector("#button");
+	let button = document.querySelector(".hamburger");
 	let burgerCon = document.querySelector("#burger-con");
 
 	function hamburgerMenu() {
-		burgerCon.classList.toggle("slide-toggle");
-		button.classList.toggle("expanded");
-	};
+		burgerCon.classList.toggle("show-menu");
+		button.classList.toggle("is-active");
+	}
 
-	// let hamburgerMenu = () => {
-	// 	burgerCon.classList.toggle("slide-toggle");
-	// 	button.classList.toggle("expanded");
-	// };
-
-	button.addEventListener("click", hamburgerMenu, false);		
+	button.addEventListener("click", hamburgerMenu);
 })();

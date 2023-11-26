@@ -1,1 +1,7 @@
 @forward 'typography';
+@import"../abstracts/variables.scss";
+
+body {
+   background: #F5F0E6;
+   color: $main-font-color;
+}
