@@ -1,8 +1,10 @@
 @import"../abstracts/variables.scss";
 @import '../abstracts/mixins.scss';
 
+// @use 'burgerCon.scss';
+
 #sticky-nav-con {
-   background-color: $gray3;
+   position: sticky;
 }
 
 #main-header {
@@ -11,23 +13,14 @@
    #top-logo{
       height: 1.5rem;
       width: 3.8125rem;
-      background-color: $gray1;
       margin: auto;
-   }
-
-   #button {
-      height: 1.875rem;
-      width: 2.375rem;
-      justify-self: end;
-      margin: auto;
-      margin-right: 0;
    }
 
    #burger-con {
       display: none;
    }
 
-   button.expanded {
+   #burger-con .expanded {
       position: absolute;
       z-index: 100;
    }
@@ -44,7 +37,7 @@
       left: 0;
    }
 
-   #burger-con ul li {
+   #hamburger ul li {
       width: 25rem;
       height: 3.125rem;
       background-color: $gray2;
