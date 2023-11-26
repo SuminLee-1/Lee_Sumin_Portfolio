@@ -3,11 +3,10 @@
 
 // @use 'burgerCon.scss';
 
-#sticky-nav-con {
+.sticky-nav-con {
    position: sticky;
-}
+   top: 0;
 
-#main-header {
    height: 2.5rem;
 
    #top-logo{
@@ -30,7 +29,7 @@
    
       height: 100vh;
       width: 100vw;
-      background-color: $gray1;
+      background-color: #40331A;
       position: absolute;
       z-index: 10;
       top: 0;
@@ -40,7 +39,8 @@
    #hamburger ul li {
       width: 25rem;
       height: 3.125rem;
-      background-color: $gray2;
+      color: #fff;
+
       display: flex;
       padding: 0.625rem 0 0.625rem 0;
    
@@ -79,26 +79,55 @@
 
       #burger-con {
          display: flex;
-
-         ul {
-            margin-top: 3.125rem;
-         }
+         margin-top: auto;
+         margin-bottom: auto;
          
          ul li {
-         width: 6.25rem;
-         height: 2.0625rem;
-         background-color: $gray2;
-
          display: inline-flex;
          justify-self: flex-end;
          margin-left: 3.1875rem;
-         margin-top: 0;
+         padding-top: 30px;
 
          &:first-child {
             margin-left: 0;
          }
 
+
+         & a {
+            text-decoration: none;
+            color: $main-font-color;
+            font-size: 20px;
+
          }
+
+         }
+
+         .navigation .menu a {
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            color: #000;
+            overflow: hidden;
+
+
+            padding-bottom: 5px;
+          }
+          
+          .navigation .menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #000;
+            transition: width 0.5s ease;
+          }
+          
+          .navigation .menu a:hover::before {
+            width: 100%;
+          }
+          
       }
    }
 }
