@@ -11,6 +11,8 @@
 </head>
 <body>
    <h1 class="hidden">Home page</h1>
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
    <section id="">
       <header class="grid-con sticky-nav-con" id="main-header">
       <h2 class="hidden">Top Main Navigation</h2>
@@ -47,10 +49,11 @@
          <img src="images/3_logo-sumin.svg" alt="hero logo img">
       </div>
 
-      <div class="hero-t col-start-1 col-end-3 m-col-start-1 m-col-end-6 l-col-start-9 l-col-end-13 xl-col-start-9 xl-col-end-13" id="hero-t-1">
+      <div class="hero-t col-start-1 col-end-4 m-col-start-1 m-col-end-6 l-col-start-9 l-col-end-13 xl-col-start-9 xl-col-end-13" id="hero-t-1">
          <h3>HEY,</h3>
-         <h3>’M SUMIN</h3>
+         <h3>I’M SUMIN</h3>
       </div>
+
       <div class="hero-t col-start-2 col-end-4 m-col-start-5 m-col-end-9 l-col-start-8 l-col-end-12 xl-col-start-8 xl-col-end-12" id="hero-t-2">
          <h4>USER </h4>
          <h4>INTERFACE</h4>
@@ -59,26 +62,39 @@
    </section>
 
 
-   <div id="rotation-t" class="full-width-grid-con">
-      <h2 class="hidden">Loop text</h2>
+   <div id="looping-t" class="full-width-grid-con">
+      <h2 class="hidden">Infinite Looping text</h2>
       <div class="infinity_inside">
          <h3>UI Designer</h3>
-         <h3>*</h3>
+         <h3 id="dot">*</h3>
          <h3>Scroll Down to See More</h3>
-         <h3>*</h3>
+         <h3 id="dot">*</h3>
       </div>
       <div class="infinity_inside">
          <h3>UI Designer</h3>
-         <h3>*</h3>
+         <h3 id="dot">*</h3>
          <h3>Scroll Down to See More</h3>
-         <h3>*</h3>
+         <h3 id="dot">*</h3>
       </div>
       <div class="infinity_inside">
          <h3>UI Designer</h3>
-         <h3>*</h3>
+         <h3 id="dot">*</h3>
          <h3>Scroll Down to See More</h3>
-         <h3>*</h3>
+         <h3 id="dot">*</h3>
       </div>
+      <div class="infinity_inside">
+         <h3>UI Designer</h3>
+         <h3 id="dot">*</h3>
+         <h3>Scroll Down to See More</h3>
+         <h3 id="dot">*</h3>
+      </div>
+      <div class="infinity_inside">
+         <h3>UI Designer</h3>
+         <h3 id="dot">*</h3>
+         <h3>Scroll Down to See More</h3>
+         <h3 id="dot">*</h3>
+      </div>
+      
       <div class="infinity_inside">
          <h3>UI Designer</h3>
          <h3>*</h3>
@@ -86,36 +102,54 @@
          <h3>*</h3>
       </div>
 
+      </div>
    </div>
 
 
 
    <section id="desc-me" class="grid-con">
       <h2 class="hidden">Little Description of Me</h2>
-      <div class="col-start-2 col-end-4 m-col-span-full l-col-start-6 l-col-end-8 xl-col-start-6 xl-col-end-8" id="dec-title"></div>
+      <div class="col-start-2 col-end-4 m-col-start-4 m-col-end-6 l-col-start-5 l-col-end-9 xl-col-start-6 xl-col-end-8" id="dec-title">Creator -
+         Designer</div>
       <div class="desc-t col-span-full m-col-span-full l-col-start-3 l-col-end-11 xl-col-start-2 xl-col-end-12" id="desc-p">
+         <p> Greetings, it’s a pleasure to make your acquaintance. I am a User Interface Designer with a profound passion for crafting exceptional web and mobile experiences. Rather than adhering to conventional approaches, my focus is on conceiving and implementing innovative design concepts.</p>
       </div>
       <div id="my-photo" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12 xl-col-start-3 xl-col-end-11">
-         <div class="photo" id="pt-1"></div>
+         <div class="photo" id="pt-1">
+            <img src="images/imgMe.png" alt="img of me">
+         </div>
          <div class="photo" id="pt-2"></div>
       </div>
-      <div class="contact-button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9"></div>
+      <div class="contact-button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9">
+         <a id="contact-bt">
+            <span href="#">Get In Touch</span>
+         </a>
+      </div>
    </section>
 
    <section id="demo-reel" class=" full-width-grid-con">
       <h2 class="hidden">Demo Reel section</h2>
+      <video controls poster="images/reel-poster.jpg">
+         <source src="video/15-sec-vid-billy-beer-720p.mp4" type="video/mp4">
+      </video>
 
    </section>
 
    <section id="projects" class="grid-con">
       <h2 class="hidden">Project Showcase</h2>
       <div id="showcase-title" class="col-span-full m-col-span-2 l-col-span-2 xl-col-span-2">
+         <h3>Project.</h3>
       </div>
 
-      <div class="project  col-start-1 col-end-5 m-col-start-1 m-col-end-5 l-col-end-6" id="project1">
-            <div class="pj-title"></div>
+      <a class="project col-span-full m-col-start-1 m-col-end-5 l-col-end-6" id="project1">
+         <img src="images/pj-poster-1.png" alt="Billy beer project poster">
+         <div>
+            <div class="pj-title">
+               <h4>BILLY BEER</h4>
+            </div>
             <dev class="pj-type"></dev>
-      </div>
+         </div>
+      </a>
 
       <div class="project col-span-full m-col-start-5 m-col-end-9 l-col-start-7 l-col-end-13" id="project2">
             <div class="pj-title col-span-2"></div>
@@ -145,8 +179,13 @@
       <div class="socialMediaIcon" id="instagram"></div>
       </div>
    </footer>
+   </div>
+   </div>
 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+   <script src="js/scroll.js"></script>
    <script src="js/main.js"></script>
+   <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 </body>
 </html>

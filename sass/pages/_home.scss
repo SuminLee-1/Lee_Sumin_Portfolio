@@ -12,37 +12,42 @@
    }  
 
    #hero-t-1 {
-      width: 13.875rem;
-      height: 5.625rem;
-
       margin-top: 6.875rem;
+      padding-left: 20px;
+      font-size: 40px;
    }
 
    #hero-t-2 {
 
-      width: 13.125rem;
-      height: 5.75rem;
-
+      font-size: 27px;
       margin-top: 2.5rem;
       margin-left: 1.5rem;
+      padding-left: 3rem;
+
+      text-align: right;
+      &:first-child {
+         padding-left: 6.25rem;
+      }
+      &:last-child {
+         padding-left: 3.125rem;
+      }
    }
 
 
    @include tablet{
       #hero-logo{
       width: 36.4375rem;
-      height: 18.1875rem;
+      height: 24.4375rem;
       }
 
       #hero-t-1 {
-         width: 17.375rem;
-         height: 7.0625rem;
+         margin-top: 85px;
          justify-self: center;
+         font-size: 50px;
       }
       #hero-t-2 {
-         width: 14.625rem;
-         height: 6.375rem;
          justify-self: center;
+         font-size: 40px;
       }
    }
 
@@ -57,26 +62,57 @@
       }
 
       #hero-t-1 {
-         width: 20.25rem;
-         height: 11rem;
          justify-self: end;
          grid-row:1/2;
          margin-top: 0;
+         font-size: 70px;
       }
       #hero-t-2 {
-         width: 20.25rem;
-         height: 9.6875rem;
-
+         margin-top: 50px;
+         margin-left: 0;
          grid-row: 2/4;
+
+         // &:last-child {
+         //    padding-left: 100px;
+         // }
       }
    }
 }
 
-#rotation-t {
+
+
+#looping-t {
 
    height: 2.5rem;
    margin-top: 7.3125rem;
+   border-top: 2px solid #3B2B0C;
+   border-bottom: 2px solid #3B2B0C;
+   background-color: #fffbf2;
 
+   display: flex;
+   white-space: nowrap;
+
+   .infinity_inside {
+      display: flex;
+      align-items: center;
+      -webkit-animation: loop 30s infinite linear;
+      animation: loop 30s infinite linear;
+
+      font-size: 15px;
+      line-height: 15px;
+
+      #dot {
+         padding: 20px 20px;
+         text-align: center;
+      }
+   }
+
+   @keyframes loop {
+      100% {
+         -webkit-transform: translateX(-100%);
+         transform: translateX(-100%);
+      }
+   }
 
    @include tablet {
       height: 3.625rem;
@@ -85,104 +121,121 @@
    @include desktop {
       height: 6.25rem;
       margin-top: 10.1875rem;
+      font-size: 30px;
    }
 }
 
+
+
 #desc-me{
    margin-top: 4.375rem;
+   text-align: center;
 
    #dec-title {
 
-   height: 2.75rem;
-   width: 7.5625rem;
+   font-size: 20px;
+   line-height: 25px;
+   text-transform: uppercase;
 
    justify-self: center;
 
    }
    #desc-p {
       height: 5.625rem;
+      font-family: Arial, Helvetica, sans-serif;
 
       // width: 18.9375rem;
       margin-top: 2.5rem;
       margin-bottom: 2.5rem;
+      padding: 10px 10px;
    }
 
    #my-photo{
-      // justify-self: center;
-      margin-left: 1.25rem;
+      justify-self: center;
       margin-right: auto;
-
-      @include tablet {
-         margin: 0;
-      }
+      overflow: hidden;
+      margin-top: 50px;
 
       .photo {
 
-      height: 9.5625rem;
-      width: 18.125rem;
+      // height: 9.5625rem;
+      // width: 18.125rem;
 
-      position: absolute;
+      // position: absolute;
       justify-self: center;
 
-      @include tablet {
-         height: 235px;
-         width: 443px;
-      }
-      }
 
-      @include desktop {
-         #dec-title{
-            width: 154px;
-            height: 100px;
-         }
-         #desc-p{
-            height: 120px;
-         }
-
-         .photo {
-            width: 830px;
-            height: 438px;
-         }
       }
    }
 
    .contact-button {
-
-      height: 2.1875rem;
-      // width: 9.1875rem;
       position: relative;
-      margin-top: 13.4375rem;
+      display: flex;
+      margin-top: 50px;
+      justify-self: center;
+      a {
+         width: 9.1875rem;
+         height: 35px;
+         border-radius: 20px;
+         border: none ;
+         cursor: pointer;
+         padding-top: 12px;
 
-      @include tablet {
-         height: 48px;
-         width: 237px;
-         margin-top: 17rem;
-         justify-self: center;
+         background-color: #3B2B0C;
+
+         text-align: center;
+         font-family: 'adedisplay';
+         text-transform: uppercase;
+
+         font-size: 13px;
+         text-decoration: none;
+         color: #fffbf2;
+
+         &:hover {
+            // transform: translate3d(0px, 100%, 0px) rotateX(75deg);
+            transition: all .5s ease-in-out;
+            font-weight: 700;
+
+         }
+      }
+         :hover {
+            box-shadow: inset #fffbf2 3rem 8rem;
+            transition: all .7s ease-in-out;
+            color: #3B2B0C;
+            transform: scale(1.1);
+         }      
+   }
+
+   @include tablet {
+      #desc-me {
+         margin-top: 100px;
+      }
+      .contact-button a{
+         height: 50px;
+         width: 200px;
+         border-radius: 30px;
+         padding-top: 20px;
+         margin-top: 50px;
       }
 
-      @include desktop {
-         height: 80px;
-         width: 324px;
-         margin-top: 32rem;
-         justify-self: center;
+   }
+   @include desktop {
+      #dec-title{
+         font-size: 50px;
+         line-height: 60px;
+         text-align: center;
+      }
+      #desc-me {
+         font-size: 25px;
+         line-height: 30px;
       }
    }
 }
 
 #demo-reel {
-   height: 11.375rem;
-
    margin-top: 5.625rem;
-
-   @include tablet {
-      height: 362px;
-      margin-top: 120px;
-   }
-
-   @include desktop {
-      height: 625px;
-      margin-top: 120px;
-   }
+   margin-bottom: 5.625rem;
+   display: flex;
 
 }
 
@@ -193,8 +246,8 @@
 
    #showcase-title {
 
-      width: 6.0625rem;
-      height: 1.1875rem;
+      font-size: 25px;
+      text-transform: uppercase;
       margin-bottom: 30px;
    }
 
