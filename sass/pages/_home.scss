@@ -21,15 +21,16 @@
 
       font-size: 27px;
       margin-top: 2.5rem;
-      margin-left: 1.5rem;
+      // margin-left: .5rem;
       padding-left: 3rem;
 
-      text-align: right;
-      &:first-child {
-         padding-left: 6.25rem;
+      text-align: center;
+
+      h4 {
+         padding: 5px;
       }
-      &:last-child {
-         padding-left: 3.125rem;
+      :last-child {
+         text-align: right;
       }
    }
 
@@ -72,9 +73,9 @@
          margin-left: 0;
          grid-row: 2/4;
 
-         // &:last-child {
-         //    padding-left: 100px;
-         // }
+         &:last-child {
+            padding-left: 50px;
+         }
       }
    }
 }
@@ -148,6 +149,8 @@
       margin-top: 2.5rem;
       margin-bottom: 2.5rem;
       padding: 10px 10px;
+
+
    }
 
    #my-photo{
@@ -168,48 +171,19 @@
       }
    }
 
-   .contact-button {
-      position: relative;
-      display: flex;
-      margin-top: 50px;
-      justify-self: center;
-      a {
-         width: 9.1875rem;
-         height: 35px;
-         border-radius: 20px;
-         border: none ;
-         cursor: pointer;
-         padding-top: 12px;
-
-         background-color: #3B2B0C;
-
-         text-align: center;
-         font-family: 'adedisplay';
-         text-transform: uppercase;
-
-         font-size: 13px;
-         text-decoration: none;
-         color: #fffbf2;
-
-         &:hover {
-            // transform: translate3d(0px, 100%, 0px) rotateX(75deg);
-            transition: all .5s ease-in-out;
-            font-weight: 700;
-
-         }
-      }
-         :hover {
-            box-shadow: inset #fffbf2 3rem 8rem;
-            transition: all .7s ease-in-out;
-            color: #3B2B0C;
-            transform: scale(1.1);
-         }      
-   }
+   
 
    @include tablet {
-      #desc-me {
          margin-top: 100px;
-      }
+         font-size: 20px;
+
+         #desc-p p{
+            font-size: 16px;
+            line-height: 25px;
+         }
+      
+
+
       .contact-button a{
          height: 50px;
          width: 200px;
@@ -220,15 +194,18 @@
 
    }
    @include desktop {
-      #dec-title{
+
+         font-size: 25px;
+         line-height: 30px;   
+      
+         #dec-title{
          font-size: 50px;
          line-height: 60px;
          text-align: center;
       }
-      #desc-me {
-         font-size: 25px;
-         line-height: 30px;
-      }
+
+
+      
    }
 }
 
@@ -252,32 +229,66 @@
    }
 
    .project {
-      height: 22.875rem;
-      width: 375px;
+         position: relative;
+         overflow: hidden;
 
-      margin-top: 10px;
+         
+      // &:after{
+      //       position: absolute;
+      //       content:"";
+      //       height:100%;
+      //       width:100%;
+      //       top:0;
+      //       left:0;
+      //       background: linear-gradient(to top, rgba(255,0,0,0) 0%,rgba(44, 26, 12, 0.65) 100%);
+      //       transition: 0.3s ease-in;
+      //   }      
+      .img-container {
+         position: relative;
+      }
+     
+      .pj-thumnail {
+         width: 100%;
+         height: auto;
+         display: block;
 
-      // #project2 {
-      //    background-color: $gray3;}
-      // #project3 {background-color: $gray4;}
-      // #project4 {background-color: $gray2;}
+         &:hover {
+            transform: scale(1.05);
+            overflow: hidden;
+            transition: transform 0.3s ease-in;
+            
+            
+         }
+      }
+   }
+
+      .pj-desc {
+         position: absolute;
+         top: 20%;
+         left: 30%;
+         transform: translate(-50%, -50%);
+         text-align: left;
+         z-index: 5;
+      .pj-title {
+         color: #fffbf2;
+         font-size: 18px;
+         font-weight: 600;
+         text-transform: uppercase;
+         }
+      .pj-type {
+         color: #fffbf2;
+         font-size: 15px;
+         padding-top: 20px;
+         font-family: Arial, Helvetica, sans-serif;
+         }
 
       @include tablet {
-         height: 366px;
 
+         .pj-title {
+            font-size: 25px;
+
+         }
       }
+   }
 
-      @include desktop {
-         height: 490px;
-         width: 502px;
-      }
-
-      // .pj-title {
-      //    width: 6.0625rem;
-      //    height: 1.1875rem;
-      //    margin-top: 2.75rem;
-      //    background-color: white;
-      // }
-      }
-
-}
+   }
