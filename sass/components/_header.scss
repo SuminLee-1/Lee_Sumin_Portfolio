@@ -6,10 +6,11 @@
 .sticky-nav-con {
    position: fixed;
    top: 0;
+   width: 100%;
    background-color: #fffbf2eb;
    z-index: 101;
 
-   height: 2.5rem;
+   height: 3rem;
    box-shadow: 0px 4px 5px 1px #3b2b0c4d;
    -webkit-box-shadow: 0px 4px 5px 1px #3b2b0c4d;
    -moz-box-shadow: 0px 4px 5px 1px #3b2b0c4d;
@@ -69,7 +70,7 @@
    }
 
    @include  desktop {
-      height: 90px;
+      height: 80px;
 
       #top-logo {
          height: 72px;

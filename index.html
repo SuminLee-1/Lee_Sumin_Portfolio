@@ -13,7 +13,7 @@
    <h1 class="hidden">Home page</h1>
    <div id="smooth-wrapper">
       <div id="smooth-content">
-   <section id="">
+   <section class="">
       <header class="full-width-grid-con   sticky-nav-con" id="main-header">
       <h2 class="hidden">Top Main Navigation</h2>
       <div class="main-logo l-col-start-1 l-col-end-3" id="top-logo">
@@ -32,7 +32,7 @@
       </div>
       <!-- </button> -->
 
-      <nav class="navbar col-span-4 col-end-5 m-col-start-8 m-col-end-9 l-col-start-5 l-col-end-13 xl-col-start-7 xl-col-start-13" id="burger-con">
+      <nav class="navbar col-span-4 col-end-5 m-col-start-8 m-col-end-9 l-col-start-7 l-col-end-13 xl-col-start-7 xl-col-start-13" id="burger-con">
          <ul class="navigation">
             <li class="menu"><a href="index.html">HOME.</a></li>
             <li class="menu"><a href="aboutPage.html">ABOUT.</a></li>
@@ -45,9 +45,9 @@
 
    <section id="main-hero" class="grid-con">
       <h2 class="hidden">Main Hero Section</h2>
-      <div id="hero-logo" class="col-start-1 col-end-5 m-col-span-full l-col-start-1 l-col-end-8 xl-col-start-1 xl-col-end-8">
-         <img src="images/3_logo-sumin.svg" alt="hero logo img">
-      </div>
+      <div class="col-span-full" id="canvas hero-logo">
+         <img src="images/hero0000.png" alt="hero img">
+     </div>
 
       <div class="hero-t col-start-1 col-end-4 m-col-start-1 m-col-end-6 l-col-start-9 l-col-end-13 xl-col-start-9 xl-col-end-13" id="hero-t-1">
          <h3>HEY,</h3>
@@ -115,8 +115,8 @@
          <div class="photo" id="pt-2"></div>
       </div>
       <div class="button contact-button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9">
-         <a id="contact-bt">
-            <span href="#">Get In Touch</span>
+         <a id="contact-bt" href="aboutPage.html">
+            <span>Get In Touch</span>
          </a>
       </div>
    </section>
@@ -135,7 +135,7 @@
          <h3>Project.</h3>
       </div>
 
-      <a class="project col-span-full l-col-start-1 l-col-end-7" id="project1">
+      <a href="caseStudy.html" class="project col-span-full l-col-start-1 l-col-end-7" id="project1" >
          <div class="img-container">
             <img src="images/pj-poster-1.png" alt="Billy beer project poster" class="pj-thumnail">
             <div class="pj-desc">
@@ -198,19 +198,36 @@
    <footer id="main-footer" class="full-width-grid-con">
       <h2 class="hidden">Main footer section</h2>
 
-      <div id="icons" class="col-end-2">
-         <img src="images/i-github.svg" class="socialMediaIcon" id="gitHub">
-         <img src="images/i-linkin.svg"  class="socialMediaIcon" id="linkin">
-         <img src="images/i-instagram.svg"  class="socialMediaIcon" id="instagram">
+      <h3 class="col-span-full">You can find me here as well!</h3>
+      <div id="icons" class="col-span-full">
+      <div id="icon1" class="icons">
+         <a href="#">
+            <img src="images/i-github.svg" class="socialMediaIcon" id="gitHub">
+         </a>
+      </div>         
+      <div id="icon2" class="icons">
+         <a href="#">
+            <img src="images/i-linkin.svg"  class="socialMediaIcon" id="linkin">
+         </a>
+      </div>    
+      <div id="icon3" class="icons">
+         <a href="#">
+            <img src="images/i-instagram.svg"  class="socialMediaIcon" id="instagram">
+         </a>
+      </div>  
       </div>
+
+
    </footer>
    </div>
    </div>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+
+   <!-- <script src="js/canvas.js"></script> -->
    <script src="js/scroll.js"></script>
-   <script src="js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+      <script src="js/main.js"></script>
    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 </body>
 </html>

@@ -1,0 +1,49 @@
+@import"../abstracts/variables.scss";
+@import '../abstracts/mixins.scss';
+
+#about-hero {
+   margin-top: 150px;
+   margin-bottom: 100px;
+
+   .hi-text h3{
+      padding: 10px;
+      margin-left: 20px;
+
+      font-size: 40px;
+      font-weight: 600;
+   }
+
+   #aboutMe {
+      margin-left: 70px;
+      margin-top:50px;
+      height: 250px;
+      width: 450px;
+   }
+
+   #about-p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      text-align: center;
+
+      margin-top: 85px;
+      line-height: 17px;
+   }
+   
+}
+
+#intro {
+   margin-top: 50px;
+
+   .intro-p {
+      font-size: 15px;
+      text-align: left;
+      line-height: 17px;
+
+      margin-top: 50px;
+      margin-bottom: 65px;
+
+      p {
+         padding-top: 15px;
+      }
+   }
+}
