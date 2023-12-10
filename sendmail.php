@@ -15,7 +15,7 @@ $name = trim($name);
 $email = trim($email);
 $msg = trim($msg);
 
-if (empty(name)) {
+if (empty($name)) {
    $errors['name'] = 'Name can not be empty';
 }
 
