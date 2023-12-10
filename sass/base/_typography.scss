@@ -1,3 +1,6 @@
+@import"../abstracts/variables.scss";
+@import '../abstracts/mixins.scss';
+
 
    @font-face {
       font-family: 'adedisplay';
@@ -7,3 +10,10 @@
       font-style: normal;
   
   }
+
+@include desktop {
+   html {
+      font-size: 120%;
+   }
+
+}
