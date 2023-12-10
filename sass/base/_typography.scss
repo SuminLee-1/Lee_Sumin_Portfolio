@@ -2,6 +2,9 @@
 @import '../abstracts/mixins.scss';
 
 
+body {
+   font-family: 'adedisplay','arial';
+}
 @include tablet {
    html {
       font-size: 110%;
