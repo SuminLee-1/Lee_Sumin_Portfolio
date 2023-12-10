@@ -17,19 +17,7 @@
       margin-top: 6.875rem;
       padding-left: 20px;
       font-size: 40px;
-      opacity: 0;
-      animation: reveal 2s cubic-bezier(0.5, 0, 0.175, 1) .1s forwards;
-
-      @keyframes reveal {
-          0% {
-            opacity: 0;
-            transform: translateY(50%);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-      }
+      @include reveal
    }
 
 
@@ -42,26 +30,16 @@
       padding-left: 3rem;
 
       text-align: center;
-      opacity: 0;
-      animation: reveal 2s cubic-bezier(0.5, 0, 0.175, 1) 1s forwards;
-
-      @keyframes reveal {
-          0% {
-            opacity: 0;
-            transform: translateY(50%);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
+      @include reveal
       }
 
       h4 {
          padding: 5px;
-      }
-      :last-child {
+               :last-child {
          text-align: right;
       }
+      }
+
    }
 
 
@@ -84,7 +62,7 @@
    }
 
    @include desktop{
-      margin-top: 8rem; 
+      // margin-top: 8rem; 
 
       #hero-logo{
       // width: 36.25rem;
@@ -110,7 +88,7 @@
          }
       }
    }
-}
+
 
 
 
@@ -129,8 +107,8 @@
    .infinity_inside {
       display: flex;
       align-items: center;
-      -webkit-animation: loop 30s infinite linear;
-      animation: loop 30s infinite linear;
+      // -webkit-animation: loop 30s infinite linear;
+      // animation: loop 30s infinite linear;
 
       font-size: 15px;
       line-height: 15px;
@@ -141,12 +119,12 @@
       }
    }
 
-   @keyframes loop {
-      100% {
-         -webkit-transform: translateX(-100%);
-         transform: translateX(-100%);
-      }
-   }
+   // @keyframes loop {
+   //    100% {
+   //       -webkit-transform: translateX(-100%);
+   //       transform: translateX(-100%);
+   //    }
+   // }
 
    @include tablet {
       height: 3.625rem;
