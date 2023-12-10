@@ -3,14 +3,27 @@
 
 
 .hamburger {
-   z-index: 100;
+   z-index: 190;
    justify-self: center;
    margin-top: auto;
    margin-bottom: auto;
 }
 
-.show-menu {
-   display: block;
+.sticky-nav-con #burger-con.show-menu {
+
+   
+   height: 100vh;
+   width: 100vw;
+   background-color: #40331A;
+   position: absolute;
+   z-index: 90;
+   top: 0;
+   left: 0;
+
+   overflow: hidden;
+   transition: height 1s ease;
+   -webkit-transition: all 0.5s ease;
+   transition: all 0.5s ease;
 }
 
 .hamburger .line{
@@ -21,7 +34,7 @@
    margin: 8px auto;
    -webkit-transition: all 0.3s ease-in-out;
    -o-transition: all 0.3s ease-in-out;
-   transition: all 0.3s ease-in-out;
+   transition: 0.3s ease-in-out;
  }
  
  .hamburger:hover{
@@ -39,10 +52,13 @@
    -ms-transform: rotate(45deg);
    -o-transform: rotate(45deg);
    transform: rotate(45deg);
+
+
  }
  
 .is-active .line:nth-child(2){
    width: 0px;
+
  }
  
 .is-active .line:nth-child(1),

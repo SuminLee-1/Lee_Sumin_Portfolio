@@ -7,14 +7,13 @@
    <link href="css/reset.css" rel="stylesheet">
    <link href="css/grid.css" rel="stylesheet">
    <link href="css/main.css" rel="stylesheet">
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
    <h1 class="hidden">Home page</h1>
    <div id="smooth-wrapper">
-      <div id="smooth-content">
-   <section id="">
-      <header class="full-width-grid-con   sticky-nav-con" id="main-header">
+   <section class="smooth-content">
+      <div id="header-con">
+      <header class="grid-con sticky-nav-con" id="main-header">
       <h2 class="hidden">Top Main Navigation</h2>
       <div class="main-logo l-col-start-1 l-col-end-3" id="top-logo">
          <a href="index.html">
@@ -32,11 +31,11 @@
       </div>
       <!-- </button> -->
 
-      <nav class="navbar col-span-4 col-end-5 m-col-start-8 m-col-end-9 l-col-start-5 l-col-end-13 xl-col-start-7 xl-col-start-13" id="burger-con">
+      <nav class="navbar col-span-4 col-end-5 m-col-start-8 m-col-end-9 l-col-start-8 l-col-end-13 xl-col-start-7 xl-col-start-13" id="burger-con">
          <ul class="navigation">
             <li class="menu"><a href="index.html">HOME.</a></li>
             <li class="menu"><a href="aboutPage.html">ABOUT.</a></li>
-            <li class="menu"><a href="projectPage.html">WORK.</a></li>
+            <li class="menu"><a href="caseStudy.html">WORK.</a></li>
             <li class="menu"><a href="#">CONTACT.</a></li>
          </ul>
       </nav>
@@ -45,9 +44,9 @@
 
    <section id="main-hero" class="grid-con">
       <h2 class="hidden">Main Hero Section</h2>
-      <div id="hero-logo" class="col-start-1 col-end-5 m-col-span-full l-col-start-1 l-col-end-8 xl-col-start-1 xl-col-end-8">
-         <img src="images/3_logo-sumin.svg" alt="hero logo img">
-      </div>
+      <div class="col-span-full l-col-start-1 l-col-end-9" id="canvas hero-logo">
+         <img src="images/hero.gif" alt="hero img">
+     </div>
 
       <div class="hero-t col-start-1 col-end-4 m-col-start-1 m-col-end-6 l-col-start-9 l-col-end-13 xl-col-start-9 xl-col-end-13" id="hero-t-1">
          <h3>HEY,</h3>
@@ -115,13 +114,13 @@
          <div class="photo" id="pt-2"></div>
       </div>
       <div class="button contact-button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9">
-         <a id="contact-bt">
-            <span href="#">Get In Touch</span>
+         <a id="contact-bt" href="aboutPage.html">
+            <span>Get In Touch</span>
          </a>
       </div>
    </section>
 
-   <section id="demo-reel" class=" full-width-grid-con">
+   <section id="demo-reel" class="grid-con">
       <h2 class="hidden">Demo Reel section</h2>
       <video controls poster="images/reel-poster.jpg">
          <source src="video/15-sec-vid-billy-beer-720p.mp4" type="video/mp4">
@@ -134,8 +133,7 @@
       <div id="showcase-title" class="col-span-full m-col-span-2 l-col-span-2 xl-col-span-2">
          <h3>Project.</h3>
       </div>
-
-      <a class="project col-span-full l-col-start-1 l-col-end-7" id="project1">
+      <a href="caseStudy.html" class="project main-projs col-span-full l-col-start-1 l-col-end-7" id="project1" >
          <div class="img-container">
             <img src="images/pj-poster-1.png" alt="Billy beer project poster" class="pj-thumnail">
             <div class="pj-desc">
@@ -147,7 +145,7 @@
          </div>
       </a>
 
-      <a class="project col-span-full l-col-start-7 l-col-end-13" id="project2">
+      <a class="project main-projs  col-span-full l-col-start-7 l-col-end-13" id="project2">
          <div class="img-container">
             <img src="images/pj-poster-2.png" alt="Room project poster" class="pj-thumnail">
             <div class="pj-desc">
@@ -157,7 +155,7 @@
          </div>
       </a>
 
-      <a class="project col-span-full l-col-start-1 l-col-end-7" id="project3">
+      <a class="project main-projs  col-span-full l-col-start-1 l-col-end-7" id="project3">
          <div class="img-container">
             <img src="images/pj-poster-3.png" alt="" class="pj-thumnail">
             <div class="pj-desc">
@@ -171,7 +169,7 @@
          </div>
       </a>
 
-      <a class="project col-span-full l-col-start-7 l-col-end-13" id="project4" href="#">
+      <a class="project main-projs  col-span-full l-col-start-7 l-col-end-13" id="project4" href="#">
          <div class="img-container">
             <img src="images/pj-poster-4.png" alt="Industry night poster"   class="pj-thumnail">
             <div class="pj-desc">
@@ -186,8 +184,8 @@
          </div>
       </a>
 
-      <div class="button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9" id="more-btn">
-         <a id="more-bt" href="#">
+      <div class="button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9" id="more">
+         <a id="more-bt">
             <span>More Work</span>
             <span class="button-line"></span>
             <img src="images/plus.svg" alt="plus" class="button-plus">
@@ -195,20 +193,63 @@
       </div>
    </section>
 
+   <section class="contact grid-con">
+      <h2 class="col-span-full l-col-start-3">GET IN TOUCH.</h2>
+
+      <div class ="send-box col-span-full l-col-start-3 l-col-end-11">  
+         <form> 
+            <div class="contact-box">
+               <input type="text" name="" required="">
+               <label>Your Name</label> 
+            </div>
+            <div class="contact-box">
+               <input type="email" name="" required="">
+               <label>Your Email</label> 
+            </div>
+            <div class="contact-box" id="message-box">
+               <input type="text" name="" required="">
+               <label>Message</label> 
+            </div>
+            <div class="button-form button col-span-full">
+               <a id="submit" href="#">Send</a>
+            </div>
+         </form>
+      </div>
+   </section>
+
    <footer id="main-footer" class="full-width-grid-con">
       <h2 class="hidden">Main footer section</h2>
 
-      <div id="icons" class="col-end-2">
-         <img src="images/i-github.svg" class="socialMediaIcon" id="gitHub">
-         <img src="images/i-linkin.svg"  class="socialMediaIcon" id="linkin">
-         <img src="images/i-instagram.svg"  class="socialMediaIcon" id="instagram">
+      <h3 class="col-span-full">You can find me here as well!</h3>
+      <div id="icons" class="col-span-full">
+      <div id="icon1" class="icons">
+         <a href="#">
+            <img src="images/i-github.svg" class="socialMediaIcon" id="gitHub">
+         </a>
+      </div>         
+      <div id="icon2" class="icons">
+         <a href="#">
+            <img src="images/i-linkin.svg"  class="socialMediaIcon" id="linkin">
+         </a>
+      </div>    
+      <div id="icon3" class="icons">
+         <a href="#">
+            <img src="images/i-instagram.svg"  class="socialMediaIcon" id="instagram">
+         </a>
+      </div>  
       </div>
+
+
    </footer>
    </div>
    </div>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+
+   <!-- <script src="js/canvas.js"></script> -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollToPlugin.min.js"></script>
    <script src="js/scroll.js"></script>
    <script src="js/main.js"></script>
    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
