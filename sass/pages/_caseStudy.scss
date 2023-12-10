@@ -1,2 +1,139 @@
 @import"../abstracts/variables.scss";
 @import '../abstracts/mixins.scss';
+body {
+   overflow: hidden;
+}
+
+.caseStudy {
+margin-top: 3.125rem;
+   .cs-hero {
+      height: 48.125rem;
+      background-image: url(/images/poster-1-Billboard.png);
+      background-position: center;
+      background-size: cover;
+
+      color: #fff;
+      text-align: center;
+
+      .cs-title {
+         font-size: 2.5rem;
+         padding-top: 37.5rem;
+      }
+       .cs-type {
+         padding-top: 1.875rem;
+         padding-bottom: 1.875rem;
+       }
+       .scroll {
+         color: #3b2b0c9d;
+         font-family: Arial, Helvetica, sans-serif;
+         @include reveal
+       }
+   }
+
+   .cs-intro {
+      height: 26.25rem;
+      background-image: url(/images/bg-circle.svg);
+      background: no-repeat;
+      overflow: hidden;
+
+      padding-top: 6.25rem;
+      padding-bottom: 0;
+
+      .intro-title {
+         font-size: 1.375rem;
+         padding-top: 2.5rem;
+      }
+      .cs-info {
+         font-size: 0.75rem;
+         text-align: right;
+         font-family: Arial, Helvetica, sans-serif;
+
+         .info{
+            padding-top: 0.375rem;
+         }
+      }
+
+      .intro-p {
+         font-size: 0.8125rem;
+         text-align: center;
+         font-family: Arial, Helvetica, sans-serif;
+         padding: 0 0.625rem;
+      }
+
+      .hr-line {
+         background-color: #3b2b0c9d;
+         height: 0.0625rem;
+         margin-top: -1.875rem;
+      }
+   }
+
+
+   .cs-desc {
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 3.125rem;
+
+      article{
+         margin-top: 3.125rem;
+
+         .cs-desc-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+         }
+
+         .cs-desc-p {
+            font-size: 0.75rem;
+            font-weight: 400;
+            line-height: 0.875rem;
+            padding: 1.25rem 0;
+         }
+
+         .cs-desc-img {
+            padding: auto;
+            justify-self: center;
+         }
+      }
+
+
+   }
+
+      .cs-display-img {
+         padding-bottom: 3.125rem;
+      }
+
+
+
+}
+.slider-mockups {
+   height: 13.4375rem;
+   margin-top: 4.375rem;
+   
+   display: inline-flex;
+   justify-content: center;
+
+
+   img {
+      padding: 0 0.625rem;
+   }
+} 
+
+
+@include tablet {
+   .slider-mockups{
+      height: 22.8125rem;
+   }
+}
+@include desktop {
+   body{
+      margin-top: 0;
+   }
+   .display {
+      max-width: 1280px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+   }
+      .slider-mockups{
+      height: 45rem;
+   }
+   }
