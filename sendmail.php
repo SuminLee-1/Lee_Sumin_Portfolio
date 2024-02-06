@@ -1,6 +1,6 @@
 <?php
 
-require_once('connect.php');
+require_once('../includes/connect.php');
 
 ///gather the form content, using the names of the form fields;
 $name = $_POST['name'];
@@ -36,7 +36,7 @@ if (empty($erros)) {
 
    $query = "INSERT INTO Contact_Form (name, email, commnets) VUALUES ('$name','$email','$msg')";
 
-   if(mtsqli_query($connect,$query) {
+   if(mysqli_query($connect,$query) {
 
    
    //format and send these values in an email
