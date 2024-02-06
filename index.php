@@ -161,11 +161,11 @@ $stmt->execute();
       echo '<div class="img-container">';
       echo '<img class="pj-thumbnail" src="images/' . $row['media_id'] . '" alt="Project Thumbnail">';
       echo '<div class="pj-desc"><h4>' . $row['project_title'] . '</h4><h5>' . $row['project_type_id'] . '</h5></div></div></a>';
-}
+      }
 
-$stmt = null;
+      $stmt = null;
 
-?>
+      ?>
 
 
 
