@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<?php
+require_once('../includes/connect.php');
+
+$stmt = $connection->prepare('SELECT * FROM Projects ORDER BY project_title ASC');
+$stmt->execute();
+?>
+
+
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -131,61 +140,36 @@
 
    </section>
 
+
+
+
+
    <section id="projects" class="grid-con">
       <h2 class="hidden">Project Showcase</h2>
       <div id="showcase-title" class="col-span-full m-col-span-2 l-col-span-2 xl-col-span-2">
          <h3>Project.</h3>
       </div>
+      
+      
 
-      <a href="caseStudy.html" class="project main-projs col-span-full l-col-start-1 l-col-end-7" id="project1" >
-         <div class="img-container">
-            <img src="images/pj-poster-1.png" alt="Billy beer project poster" class="pj-thumnail">
-            <div class="pj-desc">
-               <h4 class="pj-title">BILLY BEER</h4>
-               <h5 class="pj-type">Beer Website Rebranding
-               </h5>
-            </div>
-         </div>
-      </a>
+      
+      <?php
 
-      <a class="project main-projs  col-span-full l-col-start-7 l-col-end-13" id="project2">
-         <div class="img-container">
-            <img src="images/pj-poster-2.png" alt="Room project poster" class="pj-thumnail">
-            <div class="pj-desc">
-            <h4 class="pj-title col-span-2">HOTEL ROOM</h4>
-            <h5 class="pj-type col-span-2">3D modeling</h5>
-            </div>
-         </div>
-      </a>
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-      <a class="project main-projs  col-span-full l-col-start-1 l-col-end-7" id="project3">
-         <div class="img-container">
-            <img src="images/pj-poster-3.png" alt="" class="pj-thumnail">
-            <div class="pj-desc">
-               <h4 class="pj-title">
-                  Z magazine
-               </h4>
-               <h5 class="pj-type">
-                  Magazine Website Design
-               </h5>
-            </div>
-         </div>
-      </a>
+      echo '<a href="caseStudy.php?id=' . $row['id'] . '" class="project main-projs col-span-full l-col-spen-6">';         
+      echo '<div class="img-container">';
+      echo '<img class="pj-thumbnail" src="images/' . $row['media_id'] . '" alt="Project Thumbnail">';
+      echo '<div class="pj-desc"><h4>' . $row['project_title'] . '</h4><h5>' . $row['project_type_id'] . '</h5></div></div></a>';
+}
 
-      <a class="project main-projs  col-span-full l-col-start-7 l-col-end-13" id="project4" href="#">
-         <div class="img-container">
-            <img src="images/pj-poster-4.png" alt="Industry night poster"   class="pj-thumnail">
-            <div class="pj-desc">
-               <h4 class="pj-title">
-                  Industry NIGHT
-               </h4>
-               <h5 class="pj-type">
-                  Bootcamp<br>
-                  - Event Website Design
-               </h5>
-            </div>
-         </div>
-      </a>
+$stmt = null;
+
+?>
+
+
+
+
 
       <div class="button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9" id="more">
          <a id="more-bt">
