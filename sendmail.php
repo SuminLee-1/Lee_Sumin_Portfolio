@@ -20,7 +20,7 @@ if (empty($name)) {
 }
 
 if (empty($msg)) {
-   $errors['comments'] = 'Commnets field can not be empty';
+   $errors['comments'] = 'Comments field cannot be empty';
 }
 
 if (empty($email)) {
@@ -29,35 +29,30 @@ if (empty($email)) {
    $errors['legit_email'] = 'You must fill out your real email.';
 }
 
-if (empty($erros)) {
+if (empty($errors)) {
 
 
 ///insert these values as a new row in the contacts table
 
-   $query = "INSERT INTO Contact_Form (name, email, commnets) VUALUES ('$name','$email','$msg')";
+   $query = $connect->prepare("INSERT INTO Contact_Form (name, email, comments) VALUES (?, ?, ?)");
+   $query->bind_param("sss", $name, $email, $msg);
+   $query->execute();
 
-   if(mysqli_query($connect,$query) {
-
-   
-   //format and send these values in an email
-
+   if($query) {
    $to = 'sumin.lee707@gmail.com';
    $subject = 'Message from your portfolio site!';
    $message = 'You have recieve a new contact form submission.\n\n';
    // "\n" --> samne with <br>
    $message .= "Name: ".$name."\n";
    // .= is not gonna replace 
-   $message .= "Email: "$email."\n\n";
+   $message .= "Email: ".$email."\n\n";
 
 
-   mail($to, $subject, $message);
+      if(mail($to, $subject, $message)) {
+       header('Location: thank_you.php');
+      }
 
-
-   header('Location: thank_you.php');
-
-   })
-
-
+   }
 
 }
 
