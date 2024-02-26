@@ -7,7 +7,6 @@ $stmt = $connection->prepare('SELECT * FROM Projects ORDER BY project_title ASC'
 $stmt->execute();
 ?>
 
-
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -20,7 +19,10 @@ $stmt->execute();
    <script defer type="module" src="js/scroll.js"></script>
    <script defer type="module" src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 </head>
-<body>
+
+
+<body data-page="home">
+
    <h1 class="hidden">Home page</h1>
    <div id="smooth-wrapper">
    <section class="smooth-content">
@@ -132,7 +134,7 @@ $stmt->execute();
       </div>
    </section>
 
-   <section id="demo-reel" class="grid-con">
+   <section id="demo-reel" class="grid">
       <h2 class="hidden">Demo Reel section</h2>
       <video id="player" playsinline controls data-poster="/path/to/poster.jpg">
          <source src="video/Demo reel.mp4" type="video/mp4" />
@@ -142,31 +144,32 @@ $stmt->execute();
 
 
 
-
-
    <section id="projects" class="grid-con">
       <h2 class="hidden">Project Showcase</h2>
       <div id="showcase-title" class="col-span-full m-col-span-2 l-col-span-2 xl-col-span-2">
-         <h3>Project.</h3>
+         <h3>PROJECTS.</h3>
       </div>
-      
-      
 
-      
       <?php
 
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-      echo '<a href="caseStudy.php?id=' . $row['id'] . '" class="project main-projs col-span-full l-col-spen-6">';         
-      echo '<div class="img-container">';
-      echo '<img class="pj-thumbnail" src="images/' . $row['media_id'] . '" alt="Project Thumbnail">';
-      echo '<div class="pj-desc"><h4>' . $row['project_title'] . '</h4><h5>' . $row['project_type_id'] . '</h5></div></div></a>';
+      echo '<div class="main-projs pj-container col-span-full m-col-start-3 m-col-end-9
+      l-col-end-13" id="pj-1">';   
+      echo '<a href="caseStudy.php?id=' . $row['id'] . '" class="pj-desc">';         
+      echo '<div class="pj-hover-line"></div>';
+      echo '<h4 class="pj-title">' .$row ['project_title'] .'</h4>';
+      echo '<h5 class="pj-type">' . $row['project_type_id'] . '</h5>';
+      echo '<p class="pj-detail">' . $row['project_desc'] . '</p>  
+      </a>';
+      'a href="caseStudy.html" class="pj-img col-span-full l-col-start-5 l-col-end-13"';   
+      echo '<img src="images/'. $row['media_id'] .'" alt="Billy beer project poster" class="pj-thumnail">
+      </a>';
       }
 
       $stmt = null;
 
       ?>
-
 
 
 
@@ -185,7 +188,7 @@ $stmt->execute();
 
       <div class ="send-box col-span-full l-col-start-3 l-col-end-11">  
 
-         <form method="post" action="sendmail.php"> 
+         <form id="contactForm" method="post" action="sendmail.php"> 
             <div class="contact-box">
                <input type="text" name="name" required="" id="name">
                <label for="name">Your Name</label> 
@@ -202,6 +205,7 @@ $stmt->execute();
                <!-- <a id="submit" href="#">Send</a> -->
                <input id="submit" type="submit" value="send">
             </div>
+            <section id="feedback"><p>*Please fill out all required sections</p></section>
          </form>
       </div>
    </section>
