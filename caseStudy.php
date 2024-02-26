@@ -11,6 +11,7 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 $images = explode(",", $row['images']);
 $stmt = null;
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
