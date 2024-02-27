@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <?php
 
-require_once('../includes/connect.php');
+require_once('includes/connect.php');
+
 $sql = 'SELECT GROUP_CONCAT(file_name) AS images, project_title, project_type, collaborator, software, project_intro, media_id, problemSolving, problemSolving_img, sub_title, sub_desc, sub_img  FROM Projects, Media WHERE projects.id = project_id AND projects.id = :projectId';
 $stmt = $connection->prepare($sql);
 $projectId = $_GET['id'];

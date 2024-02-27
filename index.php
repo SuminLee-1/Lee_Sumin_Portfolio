@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-require_once('../includes/connect.php');
+require_once('includes/connect.php');
 
 $stmt = $connection->prepare('SELECT * FROM Projects ORDER BY project_title ASC');
 $stmt->execute();
@@ -155,15 +155,15 @@ $stmt->execute();
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
       echo '<div class="main-projs pj-container col-span-full m-col-start-3 m-col-end-9
-      l-col-end-13" id="pj-1">';   
-      echo '<a href="caseStudy.php?id=' . $row['id'] . '" class="pj-desc">';         
+      l-col-end-13">';   
+      echo '<a href="caseStudy.php?" class="pj-desc">';         
       echo '<div class="pj-hover-line"></div>';
       echo '<h4 class="pj-title">' .$row ['project_title'] .'</h4>';
       echo '<h5 class="pj-type">' . $row['project_type_id'] . '</h5>';
-      echo '<p class="pj-detail">' . $row['project_desc'] . '</p>  
+      echo '<p class="pj-detail">' . $row['project_intro'] . '</p>  
       </a>';
-      'a href="caseStudy.html" class="pj-img col-span-full l-col-start-5 l-col-end-13"';   
-      echo '<img src="images/'. $row['media_id'] .'" alt="Billy beer project poster" class="pj-thumnail">
+      echo '<a href="caseStudy.html" class="pj-img col-span-full l-col-start-5 l-col-end-13">';   
+      echo '<img src="images/thumb_'. $row['media_id'] .'.png" alt="Project poster" class="pj-thumbnail">
       </a>';
       }
 
