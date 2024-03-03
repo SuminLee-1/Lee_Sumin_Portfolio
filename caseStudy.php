@@ -4,7 +4,7 @@
 
 require_once('includes/connect.php');
 
-$sql = 'SELECT GROUP_CONCAT(file_name) AS images, project_title, project_type, collaborator, software, project_intro, media_id, problemSolving, problemSolving_img, sub_title, sub_desc, sub_img  FROM Projects, Media WHERE projects.id = project_id AND projects.id = :projectId';
+$sql = 'SELECT GROUP_CONCAT(file_name) AS images, project_title, project_type, collaborator, software, project_intro, media_id, problemSolving, problemSolving_img, sub_title, sub_desc, sub_img  FROM Projects, Media  WHERE projects.id = project_id AND projects.id = :projectId';
 $stmt = $connection->prepare($sql);
 $projectId = $_GET['id'];
 $stmt->bindParam(':projectId', $projectId, PDO::PARAM_INT);
@@ -18,7 +18,7 @@ $stmt = null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  <?php echo $result['project_title']; ?> </title>
+    <title>  <?php echo $row['project_title']; ?> </title>
     <link rel="stylesheet" href="css/main.css" type="text/css">
 
 </head>
