@@ -3,7 +3,6 @@
 
 #main-hero  {
    margin-top: 7rem;
-
    
    #hero-logo {
       width: 20.4375rem;
@@ -12,9 +11,8 @@
       margin-left: auto;
       margin-right: auto;
    }  
-
    #hero-t-1 {
-      margin-top: 6.875rem;
+      margin-top: 3rem;
       padding-left: 20px;
       font-size: 40px;
       @include reveal
@@ -27,7 +25,7 @@
       font-size: 27px;
       margin-top: 2.5rem;
       // margin-left: .5rem;
-      padding-left: 3rem;
+      padding-left: 4rem;
 
       text-align: center;
       @include reveal
@@ -71,19 +69,20 @@
       }
 
       #hero-t-1{ 
-         margin-top: 10px;
+         margin-top: 8rem;
          h3 {
          justify-self: end;
          grid-row:1/2;
 
-         font-size: 60px;
+         font-size: 65px;
       }
-   }
+   }  
       #hero-t-2 {
-         margin-top: 0px;
+         margin-top: -50px !important;
          margin-left: 0;
          margin-bottom: 50px;
          grid-row: 2/3;
+         font-size: 30px !important;
 
          &:last-child {
             padding-left: 50px;
@@ -240,14 +239,16 @@
    #showcase-title {
       font-size: 25px;
       text-transform: uppercase;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
    }
 
    .pj-container {
          position: relative;
          overflow: hidden;
 
-         margin-top: 50px;
+         margin-bottom: 50px;
+
+         
 
       // &:after{
       //       position: absolute;
@@ -286,13 +287,13 @@
          }
       .pj-title {
 
-         font-size: 18px;
-         font-weight: 600;
+         font-size: 20px;
+         font-weight: 500;
          text-transform: uppercase;
          margin-top: 30px;
          }
       .pj-type {
-         font-size: 18px;
+         font-size: 15px;
          padding-top: 15px;
          font-family: Arial, Helvetica, sans-serif;
          }
@@ -335,7 +336,7 @@
          display: block;
 
          &:hover {
-            transform: scale(1.05);
+            transform: scale(1.07);
             overflow: hidden;
             transition: transform 0.3s ease-in;
             

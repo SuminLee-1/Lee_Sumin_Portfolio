@@ -1,0 +1,125 @@
+@import"../abstracts/variables.scss";
+@import '../abstracts/mixins.scss';
+
+#projects {
+   margin-top: 5rem;
+   grid-gap: 0;
+
+   #showcase-title {
+      font-size: 25px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+
+   .cs-container {
+         position: relative;
+         display: inline-flex;
+         overflow: hidden;
+
+         margin-bottom: 50px;
+
+      
+      // &:after{
+      //       position: absolute;
+      //       content:"";
+      //       height:100%;
+      //       width:100%;
+      //       top:0;
+      //       left:0;
+      //       background: linear-gradient(to top, rgba(255,0,0,0) 0%,rgba(44, 26, 12, 0.65) 100%);
+      //       transition: 0.3s ease-in;
+      //   }      
+
+
+      .pj-desc {
+         color: #3B2B0C;
+         text-decoration: none;
+         list-style: none;
+         display: block;
+
+         margin-bottom: 50px;
+         // top: 20%;
+         // left: 30%;
+         // transform: translate(-50%, -50%);
+         text-align: left;
+         // z-index: 5;
+
+         &:hover {
+            .pj-hover-line {
+               border-top: 2px solid rgb(255, 254, 251);
+               transform-origin: 50% 0;
+               transition: transform 0.3s ease-in;
+            }
+         }
+
+         .pj-hover-line {
+            border-top: 1.3px solid #3b2b0c8a;
+            transform-origin: 50% 0;
+            position: absolute;
+            top: 0%;
+            bottom: auto;
+            left: 0%;
+            right: 0%;
+            margin-bottom: 30px;
+         }
+      .pj-title {
+
+         font-size: 20px;
+         font-weight: 500;
+         text-transform: uppercase;
+         margin-top: 30px;
+         }
+      .pj-type {
+         font-size: 13px;
+         padding-top: 15px;
+         font-family: Arial, Helvetica, sans-serif;
+         }
+
+      .pj-detail {
+         font-size: 15px;
+         padding-top: 30px;
+         font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .pj-thumb {
+         width: 100%;
+         height: auto;
+         margin-top: 30px;
+         display: block;
+
+         &:hover {
+            transform: scale(1.07);
+            overflow: hidden;
+            transition: transform 0.3s ease-in;
+            
+         }
+      }
+      
+
+      .hidden-projs {
+            display: none;
+         }
+
+      @include tablet {
+
+         .pj-title {
+            font-size: 25px;
+
+         }
+      }
+
+      @include desktop {
+
+            margin-bottom: 50px;
+      }
+   }  
+
+
+
+     
+
+   }
+
+
+
+   }

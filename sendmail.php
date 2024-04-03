@@ -3,57 +3,40 @@
 require_once('../includes/connect.php');
 
 ///gather the form content, using the names of the form fields;
-$name = $_POST['name'];
-$email = $_POST['email'];
-$msg = $_POST['comments'];
+$name = trim($_POST['name']);
+$email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+$message = trim($_POST['message']);
 
 $errors = [];
 
 //validate and clean these values
 
-$name = trim($name);
-$email = trim($email);
-$msg = trim($msg);
-
 if (empty($name)) {
-   $errors['name'] = 'Name can not be empty';
-}
-
-if (empty($msg)) {
-   $errors['comments'] = 'Comments field cannot be empty';
+   $errors['name'] = 'Name is required';
 }
 
 if (empty($email)) {
-   $errors['email'] = 'You must fill out your email.';
-} else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-   $errors['legit_email'] = 'You must fill out your real email.';
+   $errors['email'] = 'Email is required';
+} elseif (!$email) {
+   $errors['email'] = 'Invalid email address';
 }
 
-if (empty($errors)) {
-
-
-///insert these values as a new row in the contacts table
-
-   $query = $connect->prepare("INSERT INTO Contact_Form (name, email, comments) VALUES (?, ?, ?)");
-   $query->bind_param("sss", $name, $email, $msg);
-   $query->execute();
-
-   if($query) {
-   $to = 'sumin.lee707@gmail.com';
-   $subject = 'Message from your portfolio site!';
-   $message = 'You have recieve a new contact form submission.\n\n';
-   // "\n" --> samne with <br>
-   $message .= "Name: ".$name."\n";
-   // .= is not gonna replace 
-   $message .= "Email: ".$email."\n\n";
-
-
-      if(mail($to, $subject, $message)) {
-       header('Location: thank_you.php');
-      }
-
-   }
-
+if (empty($message)) {
+   $errors['message'] = 'Message is required';
 }
+
+// If there are errors, output them as JSON
+if (!empty($errors)) {
+   echo json_encode(['success' => false, 'errors' => $errors]);
+   exit;
+}
+
+$to = 'sumin.lee707@gmail.com';
+$subject = 'New Form Submission';
+$body = "Name: $name\nEmail: $email\nMessage: $message";
+
+mail($to, $subject, $body);
+
+echo json_encode(['success' => true, 'message' => 'Form submitted successfully!']);
 
 ?>
