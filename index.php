@@ -3,7 +3,7 @@
 <?php
 require_once('includes/connect.php');
 
-$stmt = $connection->prepare('SELECT * FROM Projects, Project_type ORDER BY project_title ASC');
+$stmt = $connection->prepare('SELECT * FROM casestudy WHERE id IN (1, 2, 3)');
 $stmt->execute();
 ?>
 
@@ -15,6 +15,7 @@ $stmt->execute();
    <link href="css/reset.css" rel="stylesheet">
    <link href="css/grid.css" rel="stylesheet">
    <link href="css/main.css" rel="stylesheet">
+   <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    <script async type="module" src="js/main.js"></script>
    <script defer type="module" src="js/scroll.js"></script>
    <script defer type="module" src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
@@ -30,7 +31,7 @@ $stmt->execute();
       <header class="grid-con sticky-nav-con" id="main-header">
       <h2 class="hidden">Top Main Navigation</h2>
       <div class="main-logo l-col-start-1 l-col-end-3" id="top-logo">
-         <a href="index.html">
+         <a href="index.php">
             <img src="images/SUMIN-LOGO.svg" alt="main-logo">
          </a>
       </div>
@@ -47,9 +48,9 @@ $stmt->execute();
 
       <nav class="navbar col-span-4 col-end-5 m-col-start-8 m-col-end-9 l-col-start-8 l-col-end-13 xl-col-start-7 xl-col-start-13" id="burger-con">
          <ul class="navigation">
-            <li class="menu"><a href="index.html">HOME.</a></li>
+            <li class="menu"><a href="index.php">HOME.</a></li>
             <li class="menu"><a href="aboutPage.html">ABOUT.</a></li>
-            <li class="menu"><a href="caseStudy.html">WORK.</a></li>
+            <li class="menu"><a href="work.php">WORK.</a></li>
             <li class="menu"><a href="#">CONTACT.</a></li>
          </ul>
       </nav>
@@ -156,15 +157,17 @@ $stmt->execute();
 
       echo '<div class="main-projs pj-container col-span-full m-col-start-3 m-col-end-9
       l-col-end-13">';   
-      echo '<a href="caseStudy.php?" class="pj-desc">';         
+      echo '<a href="caseStudy.php?id='.
+      $row['id'].'" class="pj-desc">';         
       echo '<div class="pj-hover-line"></div>';
-      echo '<h4 class="pj-title">' .$row ['project_title'] .'</h4>';
-      echo '<h5 class="pj-type">' . $row['project_type_id'] . '</h5>';
-      echo '<p class="pj-detail">' . $row['project_intro'] . '</p>  
+      echo '<h4 class="pj-title">' .$row ['pj_title'] .'</h4>';
+      echo '<h5 class="pj-type">' . $row['type'] .'</h5>';
+      echo '<p class="pj-detail">' . $row['intro_desc'] . '</p>  
       </a>';
-      echo '<a href="caseStudy.html" class="pj-img col-span-full l-col-start-5 l-col-end-13">';   
-      echo '<img src="images/thumb_'. $row['media_id'] .'.png" alt="Project poster" class="pj-thumbnail">
-      </a>';
+      echo '<a href="caseStudy.php?id='.
+      $row['id'].'" class="pj-img col-span-full l-col-start-5 l-col-end-13">'; 
+      echo '<img src="images/'. $row['thumb'] .'" alt="Project poster" class="pj-thumbnail">
+      </a></div>' ;
       }
 
       $stmt = null;
@@ -175,7 +178,7 @@ $stmt->execute();
 
 
       <div class="button col-start-2 col-end-4 m-col-start-3 m-col-end-7 l-col-start-5 l-col-end-9 xl-col-start-5 xl-xol-end-9" id="more">
-         <a id="more-bt">
+         <a id="more-bt" href="work.php">
             <span>More Work</span>
             <span class="button-line"></span>
             <img src="images/plus.svg" alt="plus" class="button-plus">
@@ -186,27 +189,33 @@ $stmt->execute();
    <section class="contact grid-con">
       <h2 class="col-span-full l-col-start-3">GET IN TOUCH.</h2>
 
-      <div class ="send-box col-span-full l-col-start-3 l-col-end-11">  
+      <div class ="send-box col-span-full l-col-start-3 l-col-end-11" id="app">  
 
-         <form id="contactForm" method="post" action="sendmail.php"> 
+         <form id="contactForm" method="post" action="sendmail.php" @submit.prevent="submitForm" > 
             <div class="contact-box">
-               <input type="text" name="name" required="" id="name">
+               <input type="text" name="name" required="" id="name" v-model="formData.Name">
                <label for="name">Your Name</label> 
             </div>
             <div class="contact-box">
-               <input type="email" name="email" required="" id="email">
+               <input type="email" name="email" required="" id="email" v-model="formData.email" >
                <label for="email">Your Email</label> 
             </div>
             <div class="contact-box" id="message-box">
-               <input type="text" name="comments" required="" id="comments">
+               <input type="text" name="comments" required="" id="comments" v-model="formData.message">
                <label for="comments">Message</label> 
             </div>
             <div class="button-form button col-span-full">
                <!-- <a id="submit" href="#">Send</a> -->
-               <input id="submit" type="submit" value="send">
+               <input id="submit" type="submit" value="send" v-html="buttonText">
             </div>
-            <section id="feedback"><p>*Please fill out all required sections</p></section>
+            <!-- <section id="feedback"><p>*Please fill out all required sections</p></section> -->
          </form>
+         <ul v-if="errors">
+                <li v-for="error in errors">{{error}}</li>
+              </ul>
+              <div v-if="responseMessage">
+                {{ responseMessage }}
+              </div>    
       </div>
    </section>
 
